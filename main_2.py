@@ -5,8 +5,6 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model, Model
 from tensorflow.keras.preprocessing.image import img_to_array
 from classes_2 import KalmanFilter, Person
-from mtcnn.mtcnn import MTCNN
-from scipy.spatial.distance import cosine
 import keras.backend as K
 
 checkpoint_path = 'siamese_epoch_69.h5'
@@ -35,7 +33,7 @@ kf = KalmanFilter(F = F, H = H, Q = Q, R = R)
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-model_path = 'model.h5'
+model_path = 'emotion_model.h5'
 
 model = load_model(model_path)
     
@@ -149,5 +147,3 @@ while True:
         break
 cap.release()
 cv2.destroyAllWindows()
-
-
