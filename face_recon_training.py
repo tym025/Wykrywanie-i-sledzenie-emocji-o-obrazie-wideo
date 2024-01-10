@@ -25,7 +25,7 @@ tf.config.experimental.set_visible_devices([], 'GPU')
 base_folder = "img_align_celeba/"
 input_shape = (95,95,1)
 
-identity = pd.read_csv(base_folder+'sorted_file.txt', sep=" ", header=None, names=['image', 'id'])
+identity = pd.read_csv(base_folder+'identity.txt', sep=" ", header=None, names=['image', 'id'])
 partition = pd.read_csv(base_folder+'partition.txt', sep=" ", header=None, names=['image', 'split'])
 
 # Połącz dataframy
